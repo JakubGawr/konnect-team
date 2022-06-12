@@ -89,7 +89,7 @@ export default defineComponent({
 
 .l-page {
   max-width: 1024px;
-  margin: 2rem auto;
+  margin: 6.5rem auto 1.5rem auto;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;

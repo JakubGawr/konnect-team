@@ -75,17 +75,16 @@ export default defineComponent({
   }
 
   &-version-wrapper {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-secondary);
+    font-weight: 500;
   }
 
   &-version-count {
-    font-size: 1.3rem;
     border: 1px solid #d9e7ff;
     color: var(--theme-main);
     margin-right: 0.5rem;
     border-radius: 40px;
-    font-weight: 500;
     padding: 0.2rem 1rem;
   }
 }

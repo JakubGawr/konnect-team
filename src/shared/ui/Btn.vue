@@ -20,6 +20,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .c-btn {
   background: var(--theme-main);
+  font-family: "Roboto", sans-serif;
   cursor: pointer;
   padding: 0.8rem 1.2rem;
   font-size: 1.6rem;

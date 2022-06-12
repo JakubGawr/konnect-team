@@ -36,6 +36,7 @@ export default defineComponent({
 .c-nav {
   display: grid;
   grid-template-columns: 1fr repeat(3, auto);
+  border: 1px solid var(--grey-light);
   height: 60px;
   align-items: center;
   padding: 0 2.4rem;

@@ -76,10 +76,11 @@ export default defineComponent({
   grid-column: 1;
   grid-row: 2;
   min-width: 215px;
+  height: 38px;
   font-size: 1.6rem;
   border: 1px solid var(--grey-light);
-  padding: 1rem 1rem 1rem 3.7rem;
-  border-radius: 5px;
+  padding: 1rem 1rem 1rem 3.8rem;
+  border-radius: 3px;
   color: var(--grey-darker);
 
   &::placeholder {
