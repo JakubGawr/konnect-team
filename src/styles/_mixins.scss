@@ -1,0 +1,5 @@
+@mixin withGridFit {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, auto));
+  gap: 2.7rem;
+}

@@ -1,0 +1,8 @@
+.u-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  margin: 1.6rem 0;
+  overflow: hidden;
+}

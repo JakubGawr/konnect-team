@@ -12,7 +12,7 @@
     "server": "json-server --watch db/index.js --routes db/routes.json --port 4001",
     "build": "yarn typecheck && vite build",
     "commit": "cz",
-    "preview": "vite preview --port 5050",
+    "preview": "vite --port 5050",
     "test:e2e": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress open'",
     "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'",
     "test:unit": "cypress open-ct",
@@ -22,8 +22,13 @@
     "lint:fix": "eslint '**/*.{js,jsx,ts,tsx,vue}' --fix"
   },
   "dependencies": {
+    "@kong/kongponents": "^7.0.0-beta.43",
+    "@types/debounce": "^1.2.1",
     "axios": "^0.27.2",
+    "debounce": "^1.2.1",
     "pinia": "^2.0.14",
+    "prettier": "^2.6.2",
+    "vite-svg-loader": "^3.3.0",
     "vue": "^3.2.35",
     "vue-router": "^4.0.15"
   },
@@ -62,6 +67,8 @@
     "start-server-and-test": "^1.14.0",
     "typescript": "~4.6.4",
     "vite": "^2.9.9",
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.6.14",
     "vue-tsc": "^0.34.15"
   },
   "author": {
