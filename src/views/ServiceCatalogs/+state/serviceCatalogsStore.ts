@@ -1,11 +1,18 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
+export interface CatalogVersions {
+  description: string;
+  id: string;
+  name: string;
+}
+
 export interface Catalog {
   description: string;
   enabled: boolean;
   id: string;
   name: string;
+  versions: CatalogVersions[]
 }
 
 export enum ViewState {

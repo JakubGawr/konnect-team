@@ -3,6 +3,7 @@
     <a
       class="c-pagination-arrow"
       :class="isDisabledPrev ? 'is-disabled' : null"
+      data-cy="arrow-left"
       tabindex="0"
       @click="decrement"
     >
@@ -20,12 +21,13 @@
       </svg>
     </a>
     <div class="c-pagination-content">
-      <span>{{ state.pageMin }} - {{ state.pageMax }} of
+      <span data-cy="pagination-content">{{ state.pageMin }} - {{ state.pageMax }} of
         {{ state.totalPageCount }}</span>
     </div>
     <a
       class="c-pagination-arrow"
       :class="isDisabledNext ? 'is-disabled' : null"
+      data-cy="arrow-right"
       tabindex="0"
       @click="increment"
     >

@@ -1,19 +1,12 @@
-const SERVICE_URL = 'api/service_packages'
+import { SERVICE_URL } from './shared'
 
-describe('Service list view', () => {
-  beforeEach(() => {
-    cy.visit('/')
-  })
-
-  xit('should display header view', () => {
-    cy.get('header[data-cy="header"]').should('be.visible')
-  })
-
-  describe('Request handling', () => {
-    xit('should display LOADING view state', () => {
-      Cypress.Promise.race([
+export function ViewStateTests() {
+  describe('View states', () => {
+    it('should display LOADING view state', () => {
+      cy.visit('/')
+      Cypress.Promise.all([
         cy.intercept(SERVICE_URL, (req) => {
-          return Cypress.Promise.delay(2000).then(() => {
+          return Cypress.Promise.delay(250).then(() => {
             req.continue()
           })
         }),
@@ -40,4 +33,4 @@ describe('Service list view', () => {
       cy.get('[data-cy="success-state"]').should('be.visible')
     })
   })
-})
+}

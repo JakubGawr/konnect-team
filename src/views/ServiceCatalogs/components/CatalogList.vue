@@ -8,6 +8,7 @@
       v-for="service in serviceCatalogs"
       :key="service.id"
       :catalog="service"
+      data-cy="catalog-item"
     />
   </ul>
   <KEmptyState

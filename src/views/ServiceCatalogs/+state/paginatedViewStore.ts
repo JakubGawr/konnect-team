@@ -21,7 +21,7 @@ export const usePaginatedViewStore = defineStore({
   getters: {
     paginatedView: ({ pageMin, pageMax }) => {
       const catalogsStore = useServiceCatalogsStore()
-      return catalogsStore.catalogList.slice(pageMin - 1, pageMax)
+      return catalogsStore.filterCatalogs.slice(pageMin - 1, pageMax)
     },
   },
   actions: {

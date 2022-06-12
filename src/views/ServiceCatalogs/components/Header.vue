@@ -13,6 +13,7 @@
     <input
       v-model="searchQuery"
       class="search-input"
+      data-cy="search-input"
       placeholder="Search services"
       @input="onInput(searchQuery)"
     >

@@ -4,7 +4,13 @@
       @input-change="onSearchData"
     />
     <div class="l-page-content">
-      <template v-if="isLoading(serviceCatalogsStore.currentViewState)" />
+      <template v-if="isLoading(serviceCatalogsStore.currentViewState)">
+        <KSkeleton
+          :card-count="4"
+          data-cy="loading-state"
+          type="card"
+        />
+      </template>
 
       <template v-else-if="isError(serviceCatalogsStore.currentViewState)">
         <KEmptyState
@@ -84,7 +90,7 @@ export default defineComponent({
 .l-page {
   max-width: 1024px;
   margin: 2rem auto;
-  padding: 0 20px;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
 
