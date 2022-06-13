@@ -18,7 +18,7 @@ export interface Catalog {
 export enum ViewState {
   LOADING = 'Loading',
   ERROR = 'Error',
-  Success = 'Success',
+  SUCCESS = 'SUCCESS',
 }
 export interface CatalogStore {
   catalogList: Catalog[];
@@ -46,6 +46,18 @@ export const useServiceCatalogsStore = defineStore({
       })
     },
 
+    isSuccess: ({ viewState }) => {
+      return viewState === ViewState.SUCCESS
+    },
+
+    isLoading: ({ viewState }) => {
+      return viewState === ViewState.LOADING
+    },
+
+    isError: ({ viewState }) => {
+      return viewState === ViewState.ERROR
+    },
+
     currentViewState: (state) => {
       return state.viewState
     },
@@ -56,7 +68,7 @@ export const useServiceCatalogsStore = defineStore({
       try {
         const result = await axios.get('/api/service_packages')
         this.catalogList = result.data
-        this.viewState = ViewState.Success
+        this.viewState = ViewState.SUCCESS
       } catch {
         this.viewState = ViewState.ERROR
       }

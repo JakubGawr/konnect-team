@@ -4,7 +4,7 @@
       @input-change="onSearchData"
     />
     <div class="l-page-content">
-      <template v-if="isLoading(serviceCatalogsStore.currentViewState)">
+      <template v-if="serviceCatalogsStore.isLoading">
         <KSkeleton
           :card-count="4"
           data-cy="loading-state"
@@ -12,7 +12,7 @@
         />
       </template>
 
-      <template v-else-if="isError(serviceCatalogsStore.currentViewState)">
+      <template v-else-if="serviceCatalogsStore.isError">
         <KEmptyState
           cta-is-hidden
           data-cy="error-state"
@@ -22,7 +22,7 @@
           </template>
         </KEmptyState>
       </template>
-      <template v-else-if="isSuccess(serviceCatalogsStore.currentViewState)">
+      <template v-else-if="serviceCatalogsStore.isSuccess">
         <CatalogListComponent
           :service-catalogs="paginatedViewStore.paginatedView"
         />
@@ -70,15 +70,6 @@ export default defineComponent({
 
     onPageChange: function(pageChange: Pagination) {
       this.paginatedViewStore.updateParams(pageChange)
-    },
-    isSuccess: function(currentState: ViewState) {
-      return currentState === ViewState.Success
-    },
-    isLoading: function(currentState: ViewState) {
-      return currentState === ViewState.LOADING
-    },
-    isError: function(currentState: ViewState) {
-      return currentState === ViewState.ERROR
     },
   },
 })
